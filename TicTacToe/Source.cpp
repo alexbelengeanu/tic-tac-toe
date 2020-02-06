@@ -1,3 +1,7 @@
+// Version: 1.0
+// A simple Tic Tac Toe game that I developed as my first 'project'.
+// New features will be added in the future.
+
 #include <iostream>
 using namespace std;
 char matrice[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
@@ -70,7 +74,7 @@ void continueGame()
 		x = inputData();
 		while (x == 0)
 		{
-			cout << "You entered and invalid field for your option. Please try again!\n";
+			cout << "You entered an invalid field for your option. Please try again!\n";
 			if (player == 'X') cout << "Player 1 turn: ";
 			else cout << "Player 2 turn: ";
 			x = inputData();
@@ -92,7 +96,6 @@ void continueGame()
 			cout << "It's DRAW!!";
 			break;
 		}
-		//checkWinner();
 		changePlayer();
 	}
 }
