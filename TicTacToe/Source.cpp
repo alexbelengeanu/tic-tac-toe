@@ -6,7 +6,7 @@
 using namespace std;
 char matrice[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
 char player = 'X';
-void displayShape()
+void displayShape() // this function displays the table/shape of the game
 {
 	system("cls");
 	cout << "      T i c     T a c    T o e    v1.0\n\n";
@@ -23,7 +23,7 @@ void displayShape()
 	cout << "\t   " << matrice[2][0] << "   |   " << matrice[2][1] << "   |   " << matrice[2][2] << "   \n";
 	cout << "\t       |       |       \n\n\n";
 }
-int inputData()
+int inputData() // it reads the input data considering the turn of which player it is
 {
 	int i, j, done=0;
 	char option;
@@ -43,7 +43,7 @@ int inputData()
 	return done;
 }
 
-int checkWinner()
+int checkWinner() // it checks if there is any winner yet
 {
 	int i, j, checks=0;
 	for(i=0;i<3;i++)
@@ -60,13 +60,13 @@ int checkWinner()
 	if (checks == 9) return 3;
 	return 0;
 }
-void changePlayer()
+void changePlayer() // it changes the turn of the players
 {
 	if (player == 'X')
 		player = 'O';
 	else player = 'X';
 }
-void continueGame()
+void continueGame()  // while there are still some fields left, the game continues until there is a winner or we have a draw
 {
 	int x;
 	while (1)
